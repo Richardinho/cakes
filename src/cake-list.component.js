@@ -13,6 +13,7 @@ export default class CakeListComponent extends React.Component {
       ],
       loaded: false
     }; 
+    this.addCake = this.addCake.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,10 @@ export default class CakeListComponent extends React.Component {
 
   componentWillUnmount () {
     this.subscription.unsubscribe();
+  }
+
+  addCake() {
+    this.props.history.push('/add-your-own-cake');      
   }
 
   render () {
@@ -56,10 +61,13 @@ export default class CakeListComponent extends React.Component {
 
     return (
       <div className={styles.container}>
-        {!this.state.loaded && showLoadingMessage()}
-        <TransitionGroup component="div" className={styles.items}>
-          {this.state.cakes.map(renderCake)}
-        </TransitionGroup>
+        <button onClick={this.addCake}>Add your own favourite cake</button>
+        <div className={styles.listContainer}>
+          {!this.state.loaded && showLoadingMessage()}
+          <TransitionGroup component="div" className={styles.items}>
+            {this.state.cakes.map(renderCake)}
+          </TransitionGroup>
+        </div>
       </div>
     );
   }

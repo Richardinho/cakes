@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './reset.css';
 import { AppContainer } from 'react-hot-loader'
 import App from './app.component'
+import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 
 const render = Component => {
   ReactDOM.render(
@@ -13,10 +14,9 @@ const render = Component => {
   )
 }
 
+if ('serviceWorker' in navigator) {
+  const registration = runtime.register();
+}
+
 render(App)
 
-if (module.hot) {
-  module.hot.accept('./app.component', () => { 
-    render(App) 
-  })
-}

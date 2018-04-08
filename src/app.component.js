@@ -13,6 +13,7 @@ import './style.css';
 import './app.css';
 import CakeListComponent from './cake-list.component.js';
 import HomeComponent from './home.component.js';
+import AddCakeComponent from './add-cake.component.js';
 import styles from './app.component.css';
 import CakesService from './cakes.service';
 
@@ -33,6 +34,10 @@ export default class App extends Component {
           <div>
             <div className={styles.container}>
               <div>
+                <TransitionRoute 
+                  cakesService={cakesService}
+                  component={AddCakeComponent}     
+                  path="/add-your-own-cake"  />
                 <TransitionRoute 
                   component={HomeComponent}     
                   exact

@@ -1,16 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 
 const path = require('path');
 
 module.exports = {
-  entry:[
-    'react-hot-loader/patch', 
-    './src/index.js'
-  ],
+  entry:{
+    'index': './src/index.js',
+  },
 
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
@@ -19,7 +19,7 @@ module.exports = {
 
   devServer: {
     contentBase: './dist',
-    hot: true,
+    historyApiFallback: true
   },
 
   module: {
@@ -55,6 +55,8 @@ module.exports = {
       template: 'index.html',
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, 'src/service-worker.js'),
+    })
   ],
 }
