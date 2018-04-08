@@ -1,0 +1,38 @@
+.container {
+  border: solid 2px pink;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  background: bisque;
+  min-height: 100vh;
+}
+.items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  width: 24.1%;
+  margin-bottom: .9%;
+  border: solid 2px deeppink;
+}
+.imageContainer {
+  padding-top: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.image {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  min-height: 100%;
+  background: red;
+}
+.loadingMessage {
+}

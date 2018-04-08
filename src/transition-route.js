@@ -2,10 +2,13 @@ import React from 'react';
 import { TransitionGroup, CSSTransition } from '../react-transition-group/src';
 import { Route } from 'react-router-dom';
 
+import styles from './transition-route.css';
+
 const firstChild = props => {
   const childrenArray = React.Children.toArray(props.children);
   return childrenArray[0] || null;
 };
+
 
 export default class TransitionRoute extends React.Component {
 
@@ -14,15 +17,18 @@ export default class TransitionRoute extends React.Component {
     return (
       <Route
         path={this.props.path}
+        exact={this.props.exact}
         children={( props ) =>(
-          <TransitionGroup component={firstChild}>
+          <TransitionGroup 
+          className={styles.container} 
+          component={firstChild}>
           {
             props.match &&
               <CSSTransition
                 classNames="page"
                 timeout={400}
               >
-               <PageComponent {...props}/> 
+               <PageComponent {...this.props} {...props}/> 
               </CSSTransition>
           } 
           </TransitionGroup>

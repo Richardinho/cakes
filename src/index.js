@@ -1,30 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './reset.css';
 import { AppContainer } from 'react-hot-loader'
-import App from './app-component'
-import HeroService from './hero-module/hero-service';
-import AdminService from './admin-module/admin-service';
-import CrisisService from './crisis-module/crisis-service';
-import Injector, { Inject } from 'test1';
-
-const config = [
-{
-  key: 'heroService', 
-  provider: HeroService
-},{
-  key: 'crisisService',
-  provider: CrisisService
-}, {
-  key: 'adminService',
-  provider: AdminService
-}];
+import App from './app.component'
 
 const render = Component => {
   ReactDOM.render(
     <AppContainer>
-      <Injector config={config}>
-        <Component />
-      </Injector>
+      <Component />
     </AppContainer>,
     document.getElementById('app')
   )
@@ -33,7 +16,7 @@ const render = Component => {
 render(App)
 
 if (module.hot) {
-  module.hot.accept('./app-component', () => { 
+  module.hot.accept('./app.component', () => { 
     render(App) 
   })
 }

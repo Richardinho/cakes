@@ -28,7 +28,13 @@ module.exports = {
         test: /\.css$/,
         use: [
           { loader: 'style-loader'},
-          { loader: 'css-loader'},
+          { 
+            loader: 'css-loader', 
+            options: {
+              modules: true,
+              camelCase: true,
+            }
+          },
         ]
       },
       {
@@ -45,7 +51,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'January experiments',
+      title: 'Waracle',
       template: 'index.html',
     }),
     new webpack.NamedModulesPlugin(),
