@@ -11,14 +11,14 @@ module.exports = {
 
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: '/',
   },
 
   devtool: 'source-map',
 
   devServer: {
-    contentBase: './dist',
+    contentBase: './docs',
     historyApiFallback: true
   },
 
