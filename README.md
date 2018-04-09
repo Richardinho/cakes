@@ -1,11 +1,15 @@
 #Cakes project
 A website for displaying delicious cakes. The user can see a list of cakes, navigate to a detail page for an individual cake, and add their own cakes.
 
-To build project in `docs` folder.
+To build project in `dist` folder.
 ```
 npm run build
 ```
-Run a web server (e.g. live-server) using `/docs` as the root folder.
+Run a web server (e.g. live-server) using `/dist` as the root folder.
+
+```
+live-server dist
+```
 
 ## Service Worker
 

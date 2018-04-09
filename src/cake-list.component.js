@@ -1,6 +1,6 @@
 import React from 'react';
 import Rx from 'rxjs/Rx';
-import { TransitionGroup, CSSTransition, Transition} from '../react-transition-group/src';
+import { TransitionGroup, CSSTransition, Transition} from 'react-transition-group';
 import styles from './cake-list.component.css';
 import YumRating from './yum-rating.component';
 

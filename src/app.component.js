@@ -4,10 +4,7 @@ import {
   Redirect, 
   NavLink, 
   Route } from 'react-router-dom';
-import { 
-  TransitionGroup, 
-  CSSTransition, 
-  Transition } from '../react-transition-group/src';
+import { TransitionGroup, CSSTransition, Transition} from 'react-transition-group';
 import TransitionRoute from './transition-route';
 import './style.css';
 import './app.css';
@@ -31,7 +28,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <BrowserRouter basename="/cakes">
+        <BrowserRouter>
           <div>
             <div className={styles.container}>
               <div>
