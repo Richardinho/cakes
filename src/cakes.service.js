@@ -1,11 +1,10 @@
-const url = 'http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes/';
+const url = 'https://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes/';
 
 export default class CakesService {
   
   
   getCakeList() {
-    const href = 'http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes';
-    return fetch(href, { mode: 'cors'})
+    return fetch(url, { mode: 'cors'})
       .then(response => response.json()) 
   }
 

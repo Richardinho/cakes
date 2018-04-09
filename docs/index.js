@@ -71005,7 +71005,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var url = 'http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes/';
+var url = 'https://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes/';
 
 var CakesService = function () {
   function CakesService() {
@@ -71015,8 +71015,7 @@ var CakesService = function () {
   _createClass(CakesService, [{
     key: 'getCakeList',
     value: function getCakeList() {
-      var href = 'http://ec2-52-209-201-89.eu-west-1.compute.amazonaws.com:5000/api/cakes';
-      return fetch(href, { mode: 'cors' }).then(function (response) {
+      return fetch(url, { mode: 'cors' }).then(function (response) {
         return response.json();
       });
     }
