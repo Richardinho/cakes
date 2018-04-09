@@ -10,7 +10,9 @@ export default class CakeListComponent extends React.Component {
     return (
       <div className={styles.container}>
         <div className={styles.innerContainer}>
-          <NavLink className={styles.link}to="/cakes" activeClassName="active">Cakes</NavLink>
+          <NavLink className={styles.link}to="/cakes" activeClassName="active">
+            Click here to see some delicious cakes! 
+          </NavLink>
         </div>
       </div>
     ); 

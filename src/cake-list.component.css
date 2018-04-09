@@ -4,6 +4,9 @@
   width: 100%;
   padding: 20px;
 }
+.header {
+  padding: 20px 0;
+}
 .listContainer {
   border: solid 2px pink;
   padding: 20px;
@@ -23,8 +26,16 @@
   margin-bottom: .9%;
   border: solid 2px deeppink;
 }
+.name {
+  font-weight: bold;
+  padding: 10px 0;
+}
+.comment {
+  padding: 10px 0;
+  font-size: 14px;
+}
 .imageContainer {
-  padding-top: 50%;
+  padding-top: 80%;
   position: relative;
   overflow: hidden;
 }
@@ -35,7 +46,7 @@
   top: 0;
   right: 0;
   min-height: 100%;
-  background: red;
+  background: grey;
 }
 .loadingMessage {
 }

@@ -1,3 +1,16 @@
+:global(body) {
+  background: peachpuff;
+  font-family: helvetica;
+}
+button {
+  font-family: 'Great Vibes', cursive;
+  background: deeppink;
+  border: none;
+  border-radius: 4px;
+  padding: .5em .7em;
+  color: white;
+  font-size: 2em;
+}
 .container {
   position: relative;
   width: 100%;

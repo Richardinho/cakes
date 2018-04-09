@@ -1,17 +1,14 @@
-<html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-  </head>
-  <body>
-    <svg
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.0"
-   width="0"
-   height="0"
+   width="645"
+   height="585"
    id="svg2">
   <defs
-     >
+     id="defs4" />
   <g
      id="heart">
     <path
@@ -22,10 +19,4 @@
        transform="translate(129.28571,-64.285714)"
        id="g2221" />
   </g>
-  </defs>
 </svg>
-
-
-    <div id="app"></div>
-  </body>
-</html>

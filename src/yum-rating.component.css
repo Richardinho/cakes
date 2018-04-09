@@ -1,0 +1,47 @@
+.container {
+  display: inline-block;
+}
+.heartContainer {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  font-size: 0.8em;
+  position: relative;
+  vertical-align: middle;
+}
+.rating {
+  vertical-align: middle;
+}
+.heart {
+  background-color: deeppink;
+  display: inline-block;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  left: .5em;
+  top: .6em;
+  transform: rotate(-45deg);
+  transform-origin:50% 50%;
+  
+  width: 1em;
+}
+
+.heart:before,
+.heart:after {
+  content:'';
+  background-color: deeppink;
+  border-radius: 50%;
+  height: 1em;
+  position: absolute;
+  width: 1em;
+}
+
+.heart:before {
+  top: -.5em;
+  left: 0;
+}
+
+.heart:after {
+  left: .5em;
+  top: 0;
+}

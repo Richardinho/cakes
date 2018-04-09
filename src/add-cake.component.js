@@ -81,29 +81,42 @@ export default class AddCakeComponent extends React.Component {
 
     return (
       <div className={styles.container}>
-        {JSON.stringify(this.state)}
-        <label>name:<input onChange={this.handleNameChange} value={this.state.name}/></label> 
-        <label>comment:<textarea onChange={this.handleCommentChange} value={this.state.comment}/></label>
-        <label>Yum factor</label>
-        <div>todo: radio buttons for yum factor. support for uploading images (use service worker?)</div>
-        <label>
-          <input onChange={this.handleOptionChange} type="radio" value="1" checked={this.state.yumFactor === '1'} />
-          Option 1
-        </label>
-        <label>
-          <input onChange={this.handleOptionChange} type="radio" value="2" checked={this.state.yumFactor === '2'} />
-          Option 2
-        </label>
-        <label>
-          <input onChange={this.handleOptionChange} type="radio" value="3" checked={this.state.yumFactor === '3'} />
-          Option 3
-        </label>
+        <label className={styles.label}>name:<input className={styles.input} onChange={this.handleNameChange} value={this.state.name}/></label> 
+        <label className={styles.label}>comment:<textarea onChange={this.handleCommentChange} value={this.state.comment}/></label>
+        <div>Yum factor:</div>
+        <div className={styles.yumFactorContainer}>
+          <label>
+            <input onChange={this.handleOptionChange} type="radio" value="1" checked={this.state.yumFactor === '1'} />
+            1
+          </label>
+          <label>
+            <input onChange={this.handleOptionChange} type="radio" value="2" checked={this.state.yumFactor === '2'} />
+            2
+          </label>
+          <label>
+            <input onChange={this.handleOptionChange} type="radio" value="3" checked={this.state.yumFactor === '3'} />
+            3
+          </label>
+          <label>
+            <input onChange={this.handleOptionChange} type="radio" value="4" checked={this.state.yumFactor === '4'} />
+            4
+          </label>
+          <label>
+            <input onChange={this.handleOptionChange} type="radio" value="5" checked={this.state.yumFactor === '5'} />
+            5
+          </label>
+        </div>
         <div className={styles.images}>
           <h2>Choose an Image</h2>
           {images.map(renderImage)}
+          <div className={styles.chosenImage}>
+            { this.state.imageUrl && <img src={this.state.imageUrl}/> }
+          </div>
         </div>
-        <button onClick={this.onSubmit}>Submit (and see your cake in the list of cakes)</button>
-        <button onClick={this.cancel}>Cancel (and go back to list of cakes)</button>
+        <div className={styles.buttonContainer}>
+          <button onClick={this.onSubmit}>Submit (and see your cake in the list of cakes)</button>
+          <button onClick={this.cancel}>Cancel (and go back to list of cakes)</button>
+        </div>
       </div>
     ); 
   }

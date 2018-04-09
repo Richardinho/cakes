@@ -14,6 +14,7 @@ import './app.css';
 import CakeListComponent from './cake-list.component.js';
 import HomeComponent from './home.component.js';
 import AddCakeComponent from './add-cake.component.js';
+import CakeDetailComponent from './cake-detail.component.js';
 import styles from './app.component.css';
 import CakesService from './cakes.service';
 
@@ -45,7 +46,12 @@ export default class App extends Component {
                 <TransitionRoute 
                   cakesService={cakesService}
                   component={CakeListComponent}     
+                  exact
                   path="/cakes"  />
+                <TransitionRoute 
+                  cakesService={cakesService}
+                  component={CakeDetailComponent}     
+                  path="/cakes/:id"  />
               </div>
             </div>
           </div>

@@ -12,5 +12,11 @@
 .link {
   color: white;
   font-size: 3em;
+  font-family: 'Great Vibes', cursive;
   font-weight: bold;
+  text-decoration: none;
+}
+.link:hover,
+.link:active {
+  text-decoration: underline;
 }

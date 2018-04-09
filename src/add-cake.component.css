@@ -1,12 +1,12 @@
 .container {
-  background: lightblue;
   min-height: 100vh;
+  width: 100%;
+  padding: 20px;
   width: 100%;
 }
 .imageContainer {
-  width : 20%;
   display: inline-block;
-  
+  vertical-align: middle;
 }
 .images {
   border: solid 2px white;
@@ -15,4 +15,33 @@
 .imageContainer img {
   width: 100px;
   height: 100px;
+  margin-right: 2px;
+}
+.chosenImage {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: grey;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.chosenImage img {
+  width: 100%;
+  height: 100%;
+}
+.buttonContainer {
+  padding: 10px 0;
+}
+.buttonContainer button {
+  margin-right: 10px;
+}
+.label {
+  vertical-align: top;
+  margin-right: 10px;
+}
+.input {
+  vertical-align: top;
+}
+.yumFactorContainer {
+  padding: 10px 0;
 }
