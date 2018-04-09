@@ -31,7 +31,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename="/cakes">
           <div>
             <div className={styles.container}>
               <div>

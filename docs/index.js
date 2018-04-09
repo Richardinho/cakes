@@ -70547,7 +70547,7 @@ var App = function (_Component) {
         null,
         _react2.default.createElement(
           _reactRouterDom.BrowserRouter,
-          null,
+          { basename: '/cakes' },
           _react2.default.createElement(
             'div',
             null,
