@@ -1,6 +1,10 @@
 import parse from 'url-parse';
 import { registerRoute } from "workbox-routing";
 
+self.addEventListener('activate', event => {
+  event.waitUntil(clients.claim());
+});
+
 let store = [];
 
 function getPathSegments(url) {
