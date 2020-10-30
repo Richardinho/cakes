@@ -1,22 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './reset.css';
-import { AppContainer } from 'react-hot-loader'
 import App from './app.component'
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
 
 const render = Component => {
   ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
+    <Component />,
     document.getElementById('app')
   )
 }
 
 if ('serviceWorker' in navigator) {
-  const registration = runtime.register();
-}
-
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
 render(App)
 

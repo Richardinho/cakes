@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Rx from 'rxjs/Rx';
+import {from} from 'rxjs';
 import styles from './cake-detail.component.css';
 import YumRating from './yum-rating.component';
 
@@ -7,6 +7,7 @@ export default class CakeDetailComponent extends Component {
 
   constructor(props) {
     super(props);  
+
     this.state = {
       cake: {}, 
       loaded: false
@@ -17,8 +18,7 @@ export default class CakeDetailComponent extends Component {
     
     const id = this.props.match.params.id;
 
-    this.subscription = Rx.Observable
-      .fromPromise(this.props.cakesService.getCakeDetail(id))
+    this.subscription = from(this.props.cakesService.getCakeDetail(id))
       .subscribe(cake => {
         this.setState({
           cake,

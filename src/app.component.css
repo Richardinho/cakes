@@ -2,6 +2,7 @@
   background: peachpuff;
   font-family: helvetica;
 }
+
 button {
   font-family: 'Great Vibes', cursive;
   background: deeppink;
@@ -11,6 +12,7 @@ button {
   color: white;
   font-size: 2em;
 }
+
 .container {
   position: relative;
   width: 100%;

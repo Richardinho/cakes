@@ -1,5 +1,5 @@
 import React from 'react';
-import Rx from 'rxjs/Rx';
+import {from} from 'rxjs';
 import { TransitionGroup, CSSTransition, Transition} from 'react-transition-group';
 import styles from './cake-list.component.css';
 import YumRating from './yum-rating.component';
@@ -12,18 +12,18 @@ export default class CakeListComponent extends React.Component {
 
   constructor(props) {
     super(props);  
+
     this.state = {
-      cakes: [
-      ],
+      cakes: [],
       loaded: false
     }; 
+
     this.addCake = this.addCake.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   componentDidMount() {
-    this.subscription = Rx.Observable
-      .fromPromise(this.props.cakesService.getCakeList())
+    this.subscription = from(this.props.cakesService.getCakeList())
       .subscribe(cakes => {
         this.setState({
           cakes: cakes.filter(goodData),
@@ -41,13 +41,13 @@ export default class CakeListComponent extends React.Component {
   }
 
   handleImageClick(event) {
-    const href = event.currentTarget.getAttribute('href');
     event.preventDefault();
+
+    const href = event.currentTarget.getAttribute('href');
     this.props.history.push(href)
   }
 
   render () {
-
     const renderCake = (cake, index) => {
       return (
         <CSSTransition timeout={400} key={cake.id} classNames="listitem">
@@ -64,6 +64,7 @@ export default class CakeListComponent extends React.Component {
         </CSSTransition>
       ); 
     }
+
     const showLoadingMessage = () => {
       return (
         <div className={styles.loadingMessage}>

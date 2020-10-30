@@ -14,6 +14,7 @@ export default class TransitionRoute extends React.Component {
 
   render () {
     const PageComponent = this.props.component; 
+
     return (
       <Route
         path={this.props.path}

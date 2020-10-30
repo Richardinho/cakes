@@ -1,24 +1,19 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
-
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
 
 module.exports = {
   entry:{
     'index': './src/index.js',
+    'sj': './src/sw.js',
   },
 
+  mode: 'development',
+  devtool: 'inline-source-map',
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-  },
-
-  devtool: 'source-map',
-
-  devServer: {
-    contentBase: './dist',
-    historyApiFallback: true
   },
 
   module: {
@@ -31,31 +26,25 @@ module.exports = {
             loader: 'css-loader', 
             options: {
               modules: true,
-              camelCase: true,
             }
           },
         ]
       },
       {
-        test: /\.js/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
     ]
   },
-
-  resolve: {
-    symlinks: false 
-  },
-
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Waracle',
+      title: 'blah',
       template: 'index.html',
+      excludeChunks: ['sj'],
     }),
-    new webpack.NamedModulesPlugin(),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, 'src/service-worker.js'),
-    })
   ],
-}
+};
