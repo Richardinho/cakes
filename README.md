@@ -1,6 +1,8 @@
 # Cakes project
 A website for displaying delicious cakes. The user can see a list of cakes, navigate to a detail page for an individual cake, and add their own cakes.
 
+See demo here: https://richardinho.github.io/cakes/
+
 To build project.
 ```
 npm run build
