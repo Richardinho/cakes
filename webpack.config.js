@@ -6,7 +6,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
   entry:{
     'index': './src/index.js',
-    'sj': './src/sw.js',
+    'sw': './src/sw.js',
   },
 
   mode: 'development',
@@ -44,7 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'blah',
       template: 'index.html',
-      excludeChunks: ['sj'],
+      excludeChunks: ['sw'],
     }),
   ],
 };
