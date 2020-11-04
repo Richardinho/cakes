@@ -43,7 +43,7 @@ export default class App extends Component {
                   cakesService={cakesService}
                   component={CakeListComponent}     
                   exact
-                  path="/cakes"  />
+                  path="/cakes-list"  />
                 <TransitionRoute 
                   cakesService={cakesService}
                   component={CakeDetailComponent}     

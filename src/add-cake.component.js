@@ -61,11 +61,11 @@ export default class AddCakeComponent extends React.Component {
     let data = Object.assign({}, this.state);
     data.id = createId();
     this.props.cakesService.addCake(data); 
-    this.props.history.push('/cakes');      
+    this.props.history.push('/cakes-list');      
   }
 
   cancel () {
-    this.props.history.push('/cakes'); 
+    this.props.history.push('/cakes-list'); 
   }
 
   render() {
