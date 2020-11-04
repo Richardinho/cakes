@@ -9,7 +9,7 @@ module.exports = {
     'sw': './src/sw.js',
   },
 
-  mode: 'production',
+  mode: 'development',
   devtool: 'inline-source-map',
   output: {
     filename: '[name].js',
