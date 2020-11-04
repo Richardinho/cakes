@@ -1,5 +1,6 @@
 import parse from 'url-parse';
 import { registerRoute } from "workbox-routing";
+import "regenerator-runtime/runtime";
 
 self.addEventListener('activate', event => {
   event.waitUntil(clients.claim());
