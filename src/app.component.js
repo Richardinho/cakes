@@ -27,7 +27,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.NODE_ENV === 'development' ? '' : '/cakes'}>
           <div>
             <div className={styles.container}>
               <div>
