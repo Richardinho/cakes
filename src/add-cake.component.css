@@ -39,9 +39,18 @@
   vertical-align: top;
   margin-right: 10px;
 }
+
 .input {
   vertical-align: top;
+  display: inline-block;
+  margin-left: 10px;
 }
+
+textarea {
+  vertical-align: top;
+  margin-left: 10px;
+}
+
 .yumFactorContainer {
   padding: 10px 0;
 }
